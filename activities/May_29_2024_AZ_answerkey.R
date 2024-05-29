@@ -34,3 +34,21 @@ animals_list <- list(animals$speed, animals$color)
 
 # 6. Give each element of your list the appropriate name (i.e speed and color).
 names(animals_list) <- colnames(animals)
+
+## Plotting
+
+#1. Change the animals data frame to a tibble called animals_tb. Save the row names to a column called animal_names before turning it into a tibble.
+animals_tb <- animals %>%
+        rownames_to_column(var = "animal_names") %>%
+        as_tibble()
+
+#2. Use ggplot2 to plot the animal names (x-axis) versus the speed of the animal (y-axis) in animals_tb using a scatterplot. Customize the plot to display as shown below.
+ggplot(animals_tb) +
+        geom_point(aes(x = animal_names, y = speed), color = "purple") +
+        theme_bw() +
+        ggtitle("Speed Comparisons Between Animals") + 
+        ylab("Speed (km/h)") +
+        xlab("Animal") +
+        theme(plot.title=element_text(hjust=0.5))
+
+#3. We decide that our plot would look better with the animal names ordered from slowest to fastest. Let's try to plot that!
