@@ -10,7 +10,7 @@
     - %
     - $
     - **>**
-    - #
+    - `#`
 
 1. If you run an incomplete line of code, the command prompt in the Console will change to something else. What is it?
     - *
