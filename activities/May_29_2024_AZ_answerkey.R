@@ -53,9 +53,4 @@ ggplot(animals_tb) +
         theme(plot.title=element_text(hjust=0.5))
 
 #3. We decide that our plot would look better with the animal names ordered from slowest to fastest. Let's try to plot that!
-        geom_point(aes(x = animal_names, y = forcats::fct_infreq(speed)), color = "purple") +
-        theme_bw() +
-        ggtitle("Speed Comparisons Between Animals") + 
-        ylab("Speed (km/h)") +
-        xlab("Animal") +
-        theme(plot.title=element_text(hjust=0.5))
+
