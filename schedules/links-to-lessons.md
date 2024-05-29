@@ -7,12 +7,10 @@
 3. **Data inspection and wrangling**: Demonstrate the utilization of functions and indices to inspect and subset data from various data structures.
 4. **Visualizing data**: Demonstrate the use of the ggplot2 package to create plots for easy data visualization.
 
-## Installations
+## Exercises for May 29 2024
 
-Download the most recent versions of R and RStudio:
-
- - [R](https://cran.r-project.org/) 
- - [RStudio](https://www.rstudio.com/products/rstudio/download/#download)
+[Exercises](../activities/May_29_2024_AZ.md)
+[Answer Key](../activities/May_29_2024_AZ_answerkey.R)
 
 ## Lessons
 
