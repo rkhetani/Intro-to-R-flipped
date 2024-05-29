@@ -1,4 +1,5 @@
 ## Reading in and inspecting data
+# 1. Download the animals.csv, by right-clicking on the link and "Save Link As..." into a folder on your computer. Upload the file into the data directory in your new project on SCP.
 
 # 2. Read the csv file into your environment and assign it to a variable called `animals`. Be sure to check that your row names are the different animals.
 animals <- read.csv("data/animals.csv")
