@@ -1,4 +1,4 @@
-## Introduction to R and RStudio (RSK)
+## Introduction to R and RStudio
 
 1. Which of the following panels in the RStudio interface directly communicate with R? 
     - **the console**
@@ -18,7 +18,7 @@
     - **+**
     - /
 
-## R Syntax and Data Structure (MP)
+## R Syntax and Data Structure 
 
 1. Which of these statements about vectors is FALSE?
     - Vectors are created using the combine function (`c()`)
@@ -34,7 +34,7 @@
     - There is no limit to the number of rows/columns in a data frame
     - Variables in your environment can be data frames
 
-## Functions and Arguments (MP)
+## Functions and Arguments
 
 1. The grep() function searches for characters or a pattern in each element of a vector. Which argument for the grep() function should we change if we want the matching elements in the vector returned rather than the indices for the matching elements?
     - `pattern`
@@ -44,7 +44,7 @@
     - **`value`**
     - `fixed`
     
-## Reading in and inspecting data (RSK)
+## Reading in and inspecting data
 1. Which of these functions will output the data type of a vector or the data structure of a non-vector object? (select all that apply)
     - **class()**
     - **str()**
@@ -67,26 +67,7 @@
    - [3] "C" "Y" "C" "L" "E"
    - [1] FALSE FALSE TRUE TRUE TRUE TRUE TRUE
 
-1. Given a vector `bike <- c("B", "I", "C", "Y", "C", "L", "E")`
-   
-   What is the exact output of `bike == "C"`?
-   
-    - [1] "C" "C"   
-    - **[1] FALSE FALSE TRUE FALSE TRUE FALSE FALSE**
-    - "C" "C"
-    - [1] 3 5
-
-1. Given a vector `bike <- c("B", "I", "C", "Y", "C", "L", "E")`
-   
-   What is the exact output of `which(bike == "C")`?
-   
-    - [1] "C" "C"   
-    - [1] FALSE FALSE TRUE FALSE TRUE FALSE FALSE
-    - **[1] 3 5**
-    - "C" "C"
-
-
-## Packages and libraries (JHL)
+## Packages and libraries
 1. (**True** or False) If you exit the Rstudio environment, reopen it, and check `sessionInfo()`, libraries that were loaded in the previous session will not show up.
 
 ## Data wrangling: data frames, matrices and lists (MP)
@@ -103,32 +84,7 @@
     * `metadata["sample3", "genotype"]`    
     * `metadata[rownames(metadata) == "sample3", colnames(metadata) == "genotype"]`
   
-## The %in% operator (MP)
-
-1. We have two data frames, and  we want to extract the columns from `df1` with the column names that are present in the row names of `df2`. Which code below would achieve this?
-
-    - `df2[ , rownames(df2) %in% colnames(df1)]`
-    - `df1[ , rownames(df2) %in% colnames(df1)]`
-    - `colnames(df1)[colnames(df1) %in% rownames(df2)]`
-    - **`df1[ , colnames(df1) %in% rownames(df2)]`**
-    - `df2[ , colnames(df1) %in% rownames(df2)]`
-    - `df1[colnames(df1) %in% rownames(df2), ]`
-  
-    
-## Reordering and matching (MP)
-
-1. We have the two vectors: `x` and `y`, which are given below.
-    * `x <- c(4, 8, 6, 10, 2)`
-    * `y <- c(8, 5, 9, 2, 4, 7, 10, 6)`
-
-    Which code would reorder and subset `y` to match `x`?
-    
-    - **`y[c(5,1,8,7,4)]`**
-    - `y[c(2,NA,NA,5,1,NA,4,3)]`
-    - `y[5,1,8,7,4]`
-    - `match(y,x)`
-
-## Plotting with the ggplot2 package (RSK)
+## Plotting with the ggplot2 package
 
 1. Which of the following lines of code will **initialize** a plot?
     - `ggplot2(name_of_data_frame)`
@@ -159,9 +115,52 @@
     - **no limit**
     - 1
 
-## Finding help (JHL)
+## Finding help
 1. Which of the following is **NOT** the best practice when finding help:
     - Include `sessionInfo()` output
     - Attach a representative, yet smaller dataset if needed
     - Be precise about the terminology
     - **Post the question online without checking previous solutions**
+
+1. Given a vector `bike <- c("B", "I", "C", "Y", "C", "L", "E")`
+   
+   What is the exact output of `bike == "C"`?
+   
+    - [1] "C" "C"   
+    - **[1] FALSE FALSE TRUE FALSE TRUE FALSE FALSE**
+    - "C" "C"
+    - [1] 3 5
+
+1. Given a vector `bike <- c("B", "I", "C", "Y", "C", "L", "E")`
+   
+   What is the exact output of `which(bike == "C")`?
+   
+    - [1] "C" "C"   
+    - [1] FALSE FALSE TRUE FALSE TRUE FALSE FALSE
+    - **[1] 3 5**
+    - "C" "C"
+
+## Reordering and matching
+
+1. We have the two vectors: `x` and `y`, which are given below.
+    * `x <- c(4, 8, 6, 10, 2)`
+    * `y <- c(8, 5, 9, 2, 4, 7, 10, 6)`
+
+    Which code would reorder and subset `y` to match `x`?
+    
+    - **`y[c(5,1,8,7,4)]`**
+    - `y[c(2,NA,NA,5,1,NA,4,3)]`
+    - `y[5,1,8,7,4]`
+    - `match(y,x)`
+  
+## The %in% operator
+
+1. We have two data frames, and  we want to extract the columns from `df1` with the column names that are present in the row names of `df2`. Which code below would achieve this?
+
+    - `df2[ , rownames(df2) %in% colnames(df1)]`
+    - `df1[ , rownames(df2) %in% colnames(df1)]`
+    - `colnames(df1)[colnames(df1) %in% rownames(df2)]`
+    - **`df1[ , colnames(df1) %in% rownames(df2)]`**
+    - `df2[ , colnames(df1) %in% rownames(df2)]`
+    - `df1[colnames(df1) %in% rownames(df2), ]`
+  
