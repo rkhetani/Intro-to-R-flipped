@@ -1,5 +1,5 @@
 ---
-title: 'Data subsetting with base R: vectors and factors'
+title: 'Reading in and inspecting data'
 date: "Friday, September 8, 2017"
 authors: Meeta Mistry, Mary Piper, Radhika Khetani
 ---
@@ -25,7 +25,9 @@ Many functions exist to read data in, and the function in R you use will depend 
 |                         |           | `read_table()`    | readr              |
 |                         |           | `read_delim()`    | readr              |
 
-For example, if we have text file where the columns are separated by commas (comma-separated values or comma-delimited), you could use the function `read.csv`. However, if the data are separated by a different delimiter in a text file (e.g. ":", ";", " "), you could use the generic `read.table` function and specify the delimiter (`sep = " "`) as an argument in the function. 
+For example, if we have text file where the columns are separated by commas (comma-separated values or comma-delimited), you could use the function `read.csv`. However, if the data are separated by a different delimiter in a text file (e.g. ":", ";", " ", "\t"), you could use the generic `read.table` function and specify the delimiter (`sep = " "`) as an argument in the function. 
+
+> Note: The `"\t"` delimiter is shorthand for tab.
 
 In the above table we refer to base R functions as being contained in the "utils" package. In addition to base R functions, we have also listed functions from some other packages that can be used to import data, specifically the "readr" package that installs when you install the "tidyverse" suite of packages.
 
@@ -77,13 +79,11 @@ In usage, all of the arguments listed for `read.table()` are the default values 
 
 > #### The `stringsAsFactors` argument
 > 
-> Note that the `read.table {utils}` family of functions has an argument called `stringsAsFactors`, which by default will take the value of `default.stringsAsFactors()`. 
+> Note that the `read.table {utils}` family of functions has an argument called `stringsAsFactors`, which by default is set to FALSE (you can double check this by searching the Help tab for `read.table` or running `?read.table` in the console). 
 > 
-> Type out `default.stringsAsFactors()` in the console to check what the default value is for your current R session. Is it `TRUE` or `FALSE`?
+> If `stringsAsFactors = TRUE`, any function in this family of functions will coerce `character` columns in the data you are reading in to `factor` columns (i.e., coerce from `vector` to `factor`) in the resulting data frame. 
 > 
-> If `default.stringsAsFactors()` is set to `TRUE`, then `stringsAsFactors = TRUE`. In that case any function in this family of functions will coerce `character` columns in the data you are reading in to `factor` columns (i.e. coerce from `vector` to `factor`) in the resulting data frame. 
-> 
-> If you want to maintain the `character vector` data structure (e.g. for gene names), you will want to make sure that `stringsAsFactors = FALSE` (or that `default.stringsAsFactors()` is set to `FALSE`).
+> If you want to maintain the `character vector` data structure (e.g., for gene names), you will want to make sure that `stringsAsFactors = FALSE`.
 
 ***
 
@@ -103,6 +103,25 @@ metadata <- read.csv(file="data/mouse_exp_design.csv")
 ```
 
 > **NOTE:** RStudio supports the automatic completion of code using the <kbd>Tab</kbd> key. This is especially helpful for when reading in files to ensure the correct file path. The tab completion feature also provides a shortcut to listing objects, and inline help for functions. **Tab completion is your friend!** We encourage you to use it whenever possible.
+
+<details>
+<summary><b>Click here to see how to import data using the <kbd>Import Dataset</kbd> button</b></summary>
+<br>You can also use the <kbd>Import Dataset</kbd> button in your Environment pane to import data. This option is not as appealing because it can lack reproducibility if not documented properly, but it can be helpful when getting started. In order to use the <kbd>Import Dataset</kbd>:<br><br>
+<ol><li>Left-click the <kbd>Import Dataset</kbd> button in the Environment pane</li>
+<li>Left-click <kbd>From Text (base...)</kbd></li>
+<li>Navigate to the file you would like to import and select <kbd>Open</kbd></li>
+<li>Type the name you would like the imported object to be called in the <code>Name</code> textbox.</li>
+<li>Select the delimiter that your file is using in the <code>Separator</code> dropdown menu</li>
+<li>Left-click <kbd>Import</kbd></li></ol>
+These steps are summarized in the GIF below:<br><br>
+<img src="../img/Import_dataset.gif" width="1000"><br><br>
+Now the dataset has been imported into your environment.<br><br>
+<blockquote>
+Note: If you are going to use this method, it could impact the reproducibility of your work, because the steps to do that import are not recorded anywhere. If you are going to use this method of importing data, it is <b><i>STRONGLY RECOMMENDED</i></b> that you copy the command that read the dataset in and is present in the console to an Rscript file. In the future, you can run that line of code from the Rscript file to recreate the data object.
+</blockquote>
+<hr />
+</details>
+
 
 Go to your Global environment and click on the name of the data frame you just created. 
 
